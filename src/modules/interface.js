@@ -6,13 +6,13 @@ export default function displayTasks() {
   toDoList.innerHTML = '';
   toDos.map((task) => {
     const item = document.createElement('li');
-    let checkP;
+    let checkedStatus;
     let styling;
     if (task.completed) {
-      checkP = 'checked';
+      checkedStatus = 'checked';
       styling = 'line-through';
     } else {
-      checkP = '';
+      checkedStatus = '';
       styling = 'none';
     }
     item.innerHTML = `<form class="task-form b-bottom box"><input name="completed" type="checkbox" ${checkP} class="checkbox"><textarea name="description" class="task-text size" style="text-decoration:${styling}">${task.description}</textarea><button type="button" class="btn delete">Delete</button>
